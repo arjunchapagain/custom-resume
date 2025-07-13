@@ -1,0 +1,290 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+:root {
+  --background: hsl(0, 0%, 100%);
+  --foreground: hsl(20, 14.3%, 4.1%);
+  --muted: hsl(60, 4.8%, 95.9%);
+  --muted-foreground: hsl(25, 5.3%, 44.7%);
+  --popover: hsl(0, 0%, 100%);
+  --popover-foreground: hsl(20, 14.3%, 4.1%);
+  --card: hsl(0, 0%, 100%);
+  --card-foreground: hsl(20, 14.3%, 4.1%);
+  --border: hsl(20, 5.9%, 90%);
+  --input: hsl(20, 5.9%, 90%);
+  --primary: hsl(207, 90%, 54%);
+  --primary-foreground: hsl(211, 100%, 99%);
+  --secondary: hsl(60, 4.8%, 95.9%);
+  --secondary-foreground: hsl(24, 9.8%, 10%);
+  --accent: hsl(60, 4.8%, 95.9%);
+  --accent-foreground: hsl(24, 9.8%, 10%);
+  --destructive: hsl(0, 84.2%, 60.2%);
+  --destructive-foreground: hsl(60, 9.1%, 97.8%);
+  --ring: hsl(20, 14.3%, 4.1%);
+  --radius: 0.5rem;
+
+  --blue-600: hsl(207, 90%, 54%);
+  --slate-800: hsl(215, 28%, 17%);
+  --slate-500: hsl(215, 20%, 65%);
+  --slate-200: hsl(215, 20%, 91%);
+  --emerald-600: hsl(158, 64%, 52%);
+  --gray-50: hsl(210, 20%, 98%);
+}
+
+.dark {
+  --background: hsl(240, 10%, 3.9%);
+  --foreground: hsl(0, 0%, 98%);
+  --muted: hsl(240, 3.7%, 15.9%);
+  --muted-foreground: hsl(240, 5%, 64.9%);
+  --popover: hsl(240, 10%, 3.9%);
+  --popover-foreground: hsl(0, 0%, 98%);
+  --card: hsl(240, 10%, 3.9%);
+  --card-foreground: hsl(0, 0%, 98%);
+  --border: hsl(240, 3.7%, 15.9%);
+  --input: hsl(240, 3.7%, 15.9%);
+  --primary: hsl(207, 90%, 54%);
+  --primary-foreground: hsl(211, 100%, 99%);
+  --secondary: hsl(240, 3.7%, 15.9%);
+  --secondary-foreground: hsl(0, 0%, 98%);
+  --accent: hsl(240, 3.7%, 15.9%);
+  --accent-foreground: hsl(0, 0%, 98%);
+  --destructive: hsl(0, 62.8%, 30.6%);
+  --destructive-foreground: hsl(0, 0%, 98%);
+  --ring: hsl(240, 4.9%, 83.9%);
+  --radius: 0.5rem;
+}
+
+@layer base {
+  * {
+    @apply border-border;
+  }
+
+  body {
+    @apply font-sans antialiased bg-background text-foreground;
+  }
+}
+
+@layer components {
+  .nav-item {
+    @apply text-slate-500 hover:bg-slate-50 hover:text-slate-800 transition-colors;
+  }
+  
+  .nav-item.active {
+    @apply bg-blue-50 text-blue-600;
+  }
+  
+  .nav-item.active .nav-icon {
+    @apply text-blue-600;
+  }
+
+  .form-input {
+    @apply w-full px-3 py-2 border border-slate-200 rounded-lg text-sm transition-colors focus:outline-none focus:border-blue-600 focus:ring-3 focus:ring-blue-600/10;
+  }
+
+  .export-btn:hover {
+    @apply transform -translate-y-0.5 shadow-lg;
+  }
+
+  .prose h1 {
+    @apply text-3xl font-bold mb-2 text-slate-900;
+  }
+  
+  .prose h2 {
+    @apply text-xl font-semibold mt-6 mb-3 text-slate-900 border-b border-slate-200 pb-2;
+  }
+  
+  .prose h3 {
+    @apply text-lg font-semibold mt-4 mb-2 text-slate-900;
+  }
+  
+  .prose p {
+    @apply mb-4 leading-relaxed text-slate-700;
+  }
+  
+  .prose ul {
+    @apply ml-6 mb-4 space-y-1;
+  }
+  
+  .prose li {
+    @apply text-slate-700;
+  }
+
+  .resume-preview {
+    font-family: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;
+    line-height: 1.5;
+    color: #1f2937;
+  }
+
+  .resume-preview h1 {
+    font-size: 2rem;
+    font-weight: 700;
+    margin-bottom: 0.5rem;
+    color: #111827;
+  }
+
+  .resume-preview h2 {
+    font-size: 1.25rem;
+    font-weight: 600;
+    margin-top: 1.5rem;
+    margin-bottom: 0.75rem;
+    color: #111827;
+    border-bottom: 1px solid #e5e7eb;
+    padding-bottom: 0.25rem;
+  }
+
+  .resume-preview h3 {
+    font-size: 1.125rem;
+    font-weight: 600;
+    margin-top: 1rem;
+    margin-bottom: 0.5rem;
+    color: #111827;
+  }
+
+  .resume-preview p {
+    margin-bottom: 0.75rem;
+    color: #374151;
+  }
+
+  .resume-preview ul {
+    margin-left: 1.5rem;
+    margin-bottom: 1rem;
+  }
+
+  .resume-preview li {
+    margin-bottom: 0.25rem;
+    color: #374151;
+  }
+
+  .ProseMirror {
+    outline: none;
+    padding: 1rem;
+    min-height: 300px;
+  }
+
+  .ProseMirror h1,
+  .ProseMirror h2,
+  .ProseMirror h3 {
+    margin-top: 1.5rem;
+    margin-bottom: 0.5rem;
+    font-weight: 600;
+  }
+
+  .ProseMirror h1 {
+    font-size: 2rem;
+    margin-top: 0;
+  }
+
+  .ProseMirror h2 {
+    font-size: 1.5rem;
+  }
+
+  .ProseMirror h3 {
+    font-size: 1.25rem;
+  }
+
+  .ProseMirror p {
+    margin-bottom: 1rem;
+  }
+
+  .ProseMirror ul,
+  .ProseMirror ol {
+    margin-left: 1.5rem;
+    margin-bottom: 1rem;
+  }
+
+  .ProseMirror li {
+    margin-bottom: 0.25rem;
+  }
+
+  .ProseMirror strong {
+    font-weight: 600;
+  }
+
+  .ProseMirror em {
+    font-style: italic;
+  }
+
+  .editor-toolbar {
+    @apply flex items-center space-x-1 px-4 py-3 border-b border-slate-200;
+  }
+
+  .editor-btn {
+    @apply p-2 rounded hover:bg-gray-100 text-slate-600 hover:text-slate-800 transition-colors;
+  }
+
+  .editor-btn.active {
+    @apply bg-blue-100 text-blue-600;
+  }
+
+  /* ATS-friendly resume preview styles */
+  .resume-preview {
+    text-rendering: optimizeLegibility;
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+    font-family: Arial, Helvetica, sans-serif;
+    line-height: 1.5;
+    color: #000000;
+  }
+
+  .resume-preview h1 {
+    font-size: 18px;
+    font-weight: bold;
+    margin-bottom: 8px;
+    color: #000000;
+    text-align: center;
+  }
+
+  .resume-preview h2 {
+    font-size: 14px;
+    font-weight: bold;
+    margin-top: 16px;
+    margin-bottom: 8px;
+    color: #000000;
+    text-transform: uppercase;
+    border-bottom: 1px solid #000000;
+    padding-bottom: 2px;
+    page-break-after: avoid;
+  }
+
+  .resume-preview h3 {
+    font-size: 12px;
+    font-weight: bold;
+    margin-top: 8px;
+    margin-bottom: 4px;
+    color: #000000;
+    page-break-after: avoid;
+  }
+
+  .resume-preview p {
+    font-size: 11px;
+    margin-bottom: 8px;
+    color: #000000;
+    line-height: 1.5;
+  }
+
+  .resume-preview ul {
+    margin: 0 0 16px 0;
+    padding-left: 20px;
+    page-break-inside: avoid;
+  }
+
+  .resume-preview li {
+    font-size: 11px;
+    margin-bottom: 4px;
+    color: #000000;
+    line-height: 1.5;
+    page-break-inside: avoid;
+  }
+
+  .resume-preview li:last-child {
+    margin-bottom: 0;
+  }
+
+  /* Ensure clean text extraction for ATS */
+  .resume-preview * {
+    background: transparent !important;
+    text-shadow: none !important;
+    filter: none !important;
+  }
+}
